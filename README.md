@@ -37,8 +37,11 @@ It fetches real-time weather data from a public API, allows users to search for 
 
 📁 frontend-vanilla-js-weather-app    
 ├── 📄 index.html    
-├── 📄 style.css   
-├── 📄 script.js    
+├── 📁 css   
+&emsp;├── 📄 style.css   
+├── 📁 js   
+&emsp;├── 📄 app.js    
+&emsp;├── 📄 api.js
 ├── 📁 img   
 &emsp;├── favicon.png    
 &emsp;├── screenshot-light.png    
