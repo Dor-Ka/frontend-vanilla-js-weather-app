@@ -40,3 +40,24 @@
 .weather__search button:hover {
     background-color: #fb923c;
 }
+
+.weather__footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.weather__footer a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.weather__footer a:hover {
+    color: var(--accent-hover);
+    border-bottom: 1px solid var(--accent-hover);
+}
