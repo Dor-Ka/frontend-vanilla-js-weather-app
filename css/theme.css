@@ -13,3 +13,43 @@
     --card-bg: #2c2c2c;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+.theme-toggle {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Motyw jasny */
+[data-theme="light"] .theme-toggle {
+    background-color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background-color: var(--card-bg);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--text-color);
+    color: var(--card-bg);
+}
