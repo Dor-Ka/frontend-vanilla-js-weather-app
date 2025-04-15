@@ -39,11 +39,14 @@ It fetches real-time weather data from a public API, allows users to search for 
 ├── 📄 index.html    
 ├── 📁 css   
 &emsp;├── 📄 style.css   
+&emsp;├── 📄 theme.css   
+&emsp;├── 📄 weather.css   
 ├── 📁 js   
 &emsp;├── 📄 app.js    
-&emsp;├── 📄 api.js
+&emsp;├── 📄 api.js   
 ├── 📁 img   
-&emsp;├── favicon.png    
+&emsp;├── favicon-v2.png   
+&emsp;├── og-img.png    
 &emsp;├── screenshot-light.png    
 &emsp;└── screenshot-dark.png    
 └── 📄 README.md
@@ -56,28 +59,24 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Added favicon, OG tags, and meta setup
 - Prepared GitHub repo and live demo link
 
+### v0.2 –  Light / Dark Mode & Layout Updates
+- Created basic HTML structure for Weather App
+- Implemented theme toggle with localStorage support
+- Designed both light and dark modes with smooth transitions and accessible color palettes
+- Centered the main content (header + sections)
+- Implemented city search and weather display
 
 ## coming soon:
 
-### v0.2 – Weather API Integration
+### Weather API Integration
 
 - Connected with OpenWeatherMap API
 - Implemented city search and weather display
 
-### v0.3 – Forecast and Error Handling
+### Forecast and Error Handling
 
 - Added 3–5 day forecast section
 - Handled invalid city names and errors
-
-### v0.4 – Light / Dark Mode
-
-- Implemented theme toggle with localStorage support
-- Designed both themes with accessible color palette
-
-### v0.5 – Responsive Design + Polishing
-
-- Added media queries for various screens
-- Improved UI/UX and loading states
 
 ## 🧑‍💻 Author
 
