@@ -1,7 +1,7 @@
 :root {
     --bg-color: #f4f7fa;
     --text-color: #1e1e1e;
-    --accent-color: #3b82f6;
+    --accent-color: #fbbf24;
     --card-bg: #ffffff;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -9,7 +9,7 @@
 [data-theme="dark"] {
     --bg-color: #1e1e1e;
     --text-color: #f4f4f4;
-    --accent-color: #60a5fa;
+    --accent-color: #f59e0b;
     --card-bg: #2c2c2c;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
