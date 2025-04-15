@@ -2,6 +2,7 @@
     --bg-color: #f4f7fa;
     --text-color: #1e1e1e;
     --accent-color: #fbbf24;
+    --accent-hover: #f59e0b;
     --card-bg: #ffffff;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -10,6 +11,7 @@
     --bg-color: #1e1e1e;
     --text-color: #f4f4f4;
     --accent-color: #f59e0b;
+    --accent-hover: #fbbf24;
     --card-bg: #2c2c2c;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
