@@ -16,9 +16,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    /*justify-content: space-between;*/
     padding: 2rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
+
+    position: relative;
 }
 
 

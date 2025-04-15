@@ -1,3 +1,13 @@
+.weather__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
 .weather__title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
