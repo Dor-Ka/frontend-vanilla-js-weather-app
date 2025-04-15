@@ -20,6 +20,12 @@
     font-size: 1rem;
 }
 
+.weather__search input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 221, 0, 0.3);
+}
+
 .weather__search button {
     padding: 0.75rem 1.2rem;
     background-color: var(--accent-color);
@@ -32,5 +38,5 @@
 }
 
 .weather__search button:hover {
-    background-color: #2563eb;
+    background-color: #fb923c;
 }

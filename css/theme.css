@@ -33,7 +33,6 @@
     color: white;
 }
 
-/* Motyw jasny */
 [data-theme="light"] .theme-toggle {
     background-color: var(--bg-color);
     border-color: var(--accent-color);
