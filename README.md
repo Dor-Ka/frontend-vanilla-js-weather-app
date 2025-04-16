@@ -66,17 +66,39 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Centered the main content (header + sections)
 - Implemented city search and weather display
 
+### v0.3 – Weather API Integration
+- Connected the app to the OpenWeatherMap API
+- Created api.js module for structured API calls
+- Implemented city search via input field and submit button
+- Displayed current weather data: temperature, description, and icon
+- Handled basic loading and error states
+
 ## coming soon:
-
-### Weather API Integration
-
-- Connected with OpenWeatherMap API
-- Implemented city search and weather display
 
 ### Forecast and Error Handling
 
 - Added 3–5 day forecast section
-- Handled invalid city names and errors
+- Improve error UI (not just text)
+- Display loading spinner or skeletons
+
+### UI Polish & Features
+- Add units toggle (°C / °F)
+- Enhance responsive design on smaller screens
+- Add animations / transitions for content updates
+
+## Security Notes
+
+This project is a demonstration of programming skills and serves educational purposes.
+It's important to note that in a real production project, API keys should never be
+placed directly in publicly accessible frontend code.
+
+The proper approach for handling API keys in production applications includes:
+- Using a backend as a proxy for communication with external APIs
+- Using serverless functions (e.g., Netlify Functions, Vercel Edge Functions)
+- Securing access through appropriate CORS configuration
+
+For implementation simplicity and demonstration purposes, the API key in this project
+is placed directly in the code.
 
 ## 🧑‍💻 Author
 
