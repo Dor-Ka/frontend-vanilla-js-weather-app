@@ -1,3 +1,5 @@
+import { getWeatherByCity } from './api.js';
+
 const themeToggleButton = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -28,4 +30,47 @@ themeToggleButton.addEventListener('click', () => {
     localStorage.setItem('theme', newTheme);
 
     updateButton();
+});
+
+const inputElement = document.querySelector('.weather__input');
+const searchButton = document.querySelector('.weather__search-button');
+const cityNameElement = document.querySelector('.weather__city-name');
+const temperatureElement = document.querySelector('.weather__temperature');
+const iconElement = document.querySelector('.weather__icon');
+const descriptionElement = document.querySelector('.weather__description');
+
+searchButton.addEventListener('click', async () => {
+    const city = inputElement.value.trim();
+
+    if (!city) return;
+
+    try {
+        cityNameElement.textContent = 'Loading...';
+        temperatureElement.textContent = '--°C';
+        descriptionElement.textContent = '';
+        iconElement.src = '';
+
+        const data = await getWeatherByCity(city);
+
+        const temperature = data.main.temp;
+        const description = data.weather[0].description;
+        const icon = data.weather[0].icon;
+
+        cityNameElement.textContent = `${data.name}, ${data.sys.country}`;
+        temperatureElement.textContent = `${temperature}°C`;
+        descriptionElement.textContent = description;
+        iconElement.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+        iconElement.alt = description;
+    } catch (err) {
+        cityNameElement.textContent = 'City not found';
+        temperatureElement.textContent = '--°C';
+        descriptionElement.textContent = 'Please try again';
+        iconElement.src = '';
+    }
+});
+
+inputElement.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        searchButton.click();
+    }
 });
