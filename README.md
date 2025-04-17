@@ -73,11 +73,15 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Displayed current weather data: temperature, description, and icon
 - Handled basic loading and error states
 
+### v0.4 – 5-Day Forecast Feature
+- Fetched and displayed 5-day weather forecast from the API
+- Added new section for multi-day forecast
+- Improved API structure and data rendering logic
+
 ## coming soon:
 
 ### Forecast and Error Handling
 
-- Added 3–5 day forecast section
 - Improve error UI (not just text)
 - Display loading spinner or skeletons
 
