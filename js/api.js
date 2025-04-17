@@ -4,9 +4,9 @@
 // In a real project, you would use a backend as a proxy or serverless solutions.
 const API_KEY = '899d7d29206376c2e969c0e758956dcd';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+const FORECAST_BASE_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 const UNITS = 'metric';
 const LANG = 'en';
-
 
 export async function getWeatherByCity(cityName) {
     try {
@@ -21,6 +21,23 @@ export async function getWeatherByCity(cityName) {
         return data;
     } catch (error) {
         console.error('❌ Error fetching weather data:', error);
+        throw error;
+    }
+}
+
+export async function getWeatherForecastByCity(cityName) {
+    try {
+        const url = `${FORECAST_BASE_URL}?q=${encodeURIComponent(cityName)}&appid=${API_KEY}&units=${UNITS}&lang=${LANG}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Forecast data not found for: ${cityName}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('❌ Error fetching weather forecast data:', error);
         throw error;
     }
 }

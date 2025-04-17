@@ -1,4 +1,4 @@
-import { getWeatherByCity } from './api.js';
+import { getWeatherByCity, getWeatherForecastByCity } from './api.js';
 
 const themeToggleButton = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
@@ -77,3 +77,76 @@ inputElement.addEventListener('keypress', (e) => {
         searchButton.click();
     }
 });
+
+const forecastButton = document.getElementById('forecast-button');
+const forecastSection = document.getElementById('weather-forecast');
+const forecastList = document.querySelector('.weather__forecast-list');
+
+forecastButton.addEventListener('click', async () => {
+    const city = inputElement.value.trim();
+    if (!city) return;
+
+    try {
+        const forecastData = await getWeatherForecastByCity(city);
+        displayForecast(forecastData);
+        forecastSection.style.display = 'block';
+    } catch (error) {
+        console.error('Error fetching forecast:', error);
+    }
+});
+
+function displayForecast(forecastData) {
+    forecastList.innerHTML = '';
+
+    const dailyForecast = {};
+    const today = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+    forecastData.list.forEach(item => {
+        const date = new Date(item.dt * 1000).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+        if (date === today) return;
+
+        if (!dailyForecast[date]) {
+            dailyForecast[date] = {
+                temp_max: -Infinity,
+                temp_min: Infinity,
+                icon: '',
+                description: ''
+            };
+        }
+
+        dailyForecast[date].temp_max = Math.max(dailyForecast[date].temp_max, item.main.temp_max);
+        dailyForecast[date].temp_min = Math.min(dailyForecast[date].temp_min, item.main.temp_min);
+
+        const hour = new Date(item.dt * 1000).getHours();
+        if (hour >= 10 && hour <= 14 && !dailyForecast[date].icon) {
+            dailyForecast[date].icon = item.weather[0].icon;
+            dailyForecast[date].description = item.weather[0].description;
+        }
+    });
+
+    for (const day in dailyForecast) {
+        const forecastItem = document.createElement('div');
+        forecastItem.classList.add('weather__forecast-item');
+
+        const dayName = document.createElement('h3');
+        dayName.textContent = day;
+
+        const tempMax = document.createElement('p');
+        tempMax.textContent = `Max: ${(Math.round(dailyForecast[day].temp_max)).toFixed(0)}°C`;
+
+        const tempMin = document.createElement('p');
+        tempMin.textContent = `Min: ${(Math.round(dailyForecast[day].temp_min)).toFixed(0)}°C`;
+
+        const icon = document.createElement('img');
+        icon.src = `https://openweathermap.org/img/wn/${dailyForecast[day].icon}@2x.png`;
+        icon.alt = dailyForecast[day].description;
+        icon.classList.add('weather__forecast-icon');
+
+        forecastItem.appendChild(dayName);
+        forecastItem.appendChild(tempMax);
+        forecastItem.appendChild(tempMin);
+        forecastItem.appendChild(icon);
+        forecastList.appendChild(forecastItem);
+    }
+}
