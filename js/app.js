@@ -52,18 +52,21 @@ searchButton.addEventListener('click', async () => {
 
         const data = await getWeatherByCity(city);
 
-        const temperature = data.main.temp;
+        const temperatureValue = parseFloat(data.main.temp);
         const description = data.weather[0].description;
         const icon = data.weather[0].icon;
 
         cityNameElement.textContent = `${data.name}, ${data.sys.country}`;
-        temperatureElement.textContent = `${temperature}°C`;
+
+        const formattedTemperature = (Math.floor(temperatureValue * 10) / 10).toFixed(1);
+        temperatureElement.textContent = `${formattedTemperature}°C`;
+
         descriptionElement.textContent = description;
         iconElement.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         iconElement.alt = description;
     } catch (err) {
         cityNameElement.textContent = 'City not found';
-        temperatureElement.textContent = '--°C';
+        temperatureElement.textContent = '';
         descriptionElement.textContent = 'Please try again';
         iconElement.src = '';
     }
