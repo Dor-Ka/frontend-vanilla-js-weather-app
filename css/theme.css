@@ -1,6 +1,6 @@
 :root {
-    --bg-color: #f4f7fa;
-    --text-color: #1e1e1e;
+    --bg-color: #CEE6DB;
+    --text-color: #122C20;
     --accent-color: #fbbf24;
     --accent-hover: #f59e0b;
     --card-bg: #ffffff;
@@ -8,8 +8,8 @@
 }
 
 [data-theme="dark"] {
-    --bg-color: #1e1e1e;
-    --text-color: #f4f4f4;
+    --bg-color: #122C20;
+    --text-color: #CEE6DB;
     --accent-color: #f59e0b;
     --accent-hover: #fbbf24;
     --card-bg: #2c2c2c;
@@ -46,11 +46,20 @@
 }
 
 [data-theme="dark"] .theme-toggle {
-    background-color: var(--card-bg);
+    background-color: var(--bg-color);
     border-color: var(--accent-color);
 }
 
 [data-theme="dark"] .theme-toggle:hover {
     background-color: var(--text-color);
     color: var(--card-bg);
+}
+
+[data-theme="dark"] .weather__result {
+    background-color: #70A98F;
+    color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }

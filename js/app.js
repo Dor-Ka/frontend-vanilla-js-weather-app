@@ -47,7 +47,7 @@ searchButton.addEventListener('click', async () => {
     try {
         cityNameElement.textContent = 'Loading...';
         temperatureElement.textContent = '--°C';
-        descriptionElement.textContent = '';
+        descriptionElement.textContent = '-';
         iconElement.src = '';
 
         const data = await getWeatherByCity(city);
