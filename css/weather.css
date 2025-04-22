@@ -72,6 +72,13 @@
     font-weight: bold;
 }
 
+.weather__result {
+    background-color: #89BDA5;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 .weather__temperature {
     font-size: 2em;
     margin-bottom: 15px;
