@@ -85,6 +85,10 @@ It fetches real-time weather data from a public API, allows users to search for 
   - Below 520px: Weather forecast items wrap and are displayed in a vertical layout. 
   - Below 400px: More compact adjustments for small screens (e.g., padding, font sizes).
 
+### v0.6 – Class-based Visibility Refactor
+- Replaced all style.display logic in JavaScript with a single utility class .is-hidden for better readability and maintainability.
+- Updated DOM visibility toggles (block/none) to use classList.add() / remove() with .is-hidden. 
+- Ensured consistency and separation of concerns between JS and CSS by moving visibility logic into CSS classes.
 
 ## coming soon:
 
