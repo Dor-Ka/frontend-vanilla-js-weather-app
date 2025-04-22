@@ -10,10 +10,9 @@ It fetches real-time weather data from a public API, allows users to search for 
 [👉 View the Demo](https://dor-ka.github.io/frontend-vanilla-js-weather-app/)
 
 ## 📸 Screenshots
-
-| Light Mode | Dark Mode |
-|------------|-----------|
-| ![Light Mode](./img/screenshot-light.png) | ![Dark Mode](./img/screenshot-dark.png) |
+![search](./img/screenshot_01.png)
+![result](./img/screenshot_02.png)
+![5-Day Forecast](./img/screenshot_03.png)
 
 ## 🔮 Planned Features
 
@@ -90,17 +89,14 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Updated DOM visibility toggles (block/none) to use classList.add() / remove() with .is-hidden. 
 - Ensured consistency and separation of concerns between JS and CSS by moving visibility logic into CSS classes.
 
-## coming soon:
-
-### Forecast and Error Handling
-
+### v0.7 – Error Handling
 - Improve error UI (not just text)
-- Display loading spinner or skeletons
+
+
+## coming soon:
 
 ### UI Polish & Features
 - Add units toggle (°C / °F)
-- Enhance responsive design on smaller screens
-- Add animations / transitions for content updates
 
 ## Security Notes
 
