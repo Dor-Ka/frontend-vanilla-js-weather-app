@@ -1,6 +1,6 @@
 import { getWeatherByCity, getWeatherForecastByCity } from './api.js';
 
-const themeToggleButton = document.getElementById('theme-toggle');
+const themeToggleButton = document.querySelector('.js-theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
 
 document.documentElement.setAttribute('data-theme', currentTheme);
@@ -9,13 +9,13 @@ function updateButton() {
     const theme = document.documentElement.getAttribute('data-theme');
 
     if (theme === 'light') {
-        themeToggleButton.querySelector('.theme-toggle__text').textContent = 'Dark Mode';
-        themeToggleButton.querySelector('.theme-toggle__icon').textContent = '🌙';
-        themeToggleButton.querySelector('.theme-toggle__icon_2').textContent = '🌙';
+        themeToggleButton.querySelector('.js-theme-toggle__text').textContent = 'Dark Mode';
+        themeToggleButton.querySelector('.js-theme-toggle__icon').textContent = '🌙';
+        themeToggleButton.querySelector('.js-theme-toggle__icon_2').textContent = '🌙';
     } else {
-        themeToggleButton.querySelector('.theme-toggle__text').textContent = 'Light Mode';
-        themeToggleButton.querySelector('.theme-toggle__icon').textContent = '🌞';
-        themeToggleButton.querySelector('.theme-toggle__icon_2').textContent = '🌞';
+        themeToggleButton.querySelector('.js-theme-toggle__text').textContent = 'Light Mode';
+        themeToggleButton.querySelector('.js-theme-toggle__icon').textContent = '🌞';
+        themeToggleButton.querySelector('.js-theme-toggle__icon_2').textContent = '🌞';
     }
 }
 
@@ -26,18 +26,16 @@ themeToggleButton.addEventListener('click', () => {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
     document.documentElement.setAttribute('data-theme', newTheme);
-
     localStorage.setItem('theme', newTheme);
-
     updateButton();
 });
 
-const inputElement = document.querySelector('.weather__input');
-const searchButton = document.querySelector('.weather__search-button');
-const cityNameElement = document.querySelector('.weather__city-name');
-const temperatureElement = document.querySelector('.weather__temperature');
-const iconElement = document.querySelector('.weather__icon');
-const descriptionElement = document.querySelector('.weather__description');
+const inputElement = document.querySelector('.js-weather-input');
+const searchButton = document.querySelector('.js-weather-search-button');
+const cityNameElement = document.querySelector('.js-weather-city-name');
+const temperatureElement = document.querySelector('.js-weather-temperature');
+const iconElement = document.querySelector('.js-weather-icon');
+const descriptionElement = document.querySelector('.js-weather-description');
 
 searchButton.addEventListener('click', async () => {
     const city = inputElement.value.trim();
@@ -57,7 +55,6 @@ searchButton.addEventListener('click', async () => {
         const icon = data.weather[0].icon;
 
         cityNameElement.textContent = `${data.name}, ${data.sys.country}`;
-
         const formattedTemperature = (Math.floor(temperatureValue * 10) / 10).toFixed(1);
         temperatureElement.textContent = `${formattedTemperature}°C`;
 
@@ -78,9 +75,9 @@ inputElement.addEventListener('keypress', (e) => {
     }
 });
 
-const forecastButton = document.getElementById('forecast-button');
-const forecastSection = document.getElementById('weather-forecast');
-const forecastList = document.querySelector('.weather__forecast-list');
+const forecastButton = document.querySelector('.js-weather-forecast-button');
+const forecastSection = document.querySelector('.js-weather-forecast');
+const forecastList = document.querySelector('.js-weather-forecast-list');
 
 forecastButton.addEventListener('click', async () => {
     const city = inputElement.value.trim();
