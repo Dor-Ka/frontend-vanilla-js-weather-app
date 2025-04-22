@@ -77,6 +77,7 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Fetched and displayed 5-day weather forecast from the API
 - Added new section for multi-day forecast
 - Improved API structure and data rendering logic
+- Refactored JS-related DOM class names to use js- prefix for better separation of concerns
 
 ## coming soon:
 
