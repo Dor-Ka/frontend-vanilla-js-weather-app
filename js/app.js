@@ -76,6 +76,7 @@ inputElement.addEventListener('keypress', (e) => {
 });
 
 const forecastButton = document.querySelector('.js-weather-forecast-button');
+const forecastHideButton = document.querySelector('.js-weather-forecast-button-hide');
 const forecastSection = document.querySelector('.js-weather-forecast');
 const forecastList = document.querySelector('.js-weather-forecast-list');
 
@@ -84,37 +85,19 @@ forecastButton.addEventListener('click', async () => {
     if (!city) return;
 
     try {
-        if (forecastSection.style.display === 'none') {
-            forecastSection.style.display = 'block';
-            forecastButton.textContent = 'Hide 5-Day Forecast';
-        } else {
-            forecastSection.style.display = 'none';
-            forecastButton.textContent = 'Show 5-Day Forecast';
-        }
-
         const forecastData = await getWeatherForecastByCity(city);
         displayForecast(forecastData);
+        forecastSection.style.display = 'block';
+        forecastButton.style.display = 'none';
     } catch (error) {
         console.error('Error fetching forecast:', error);
     }
 });
 
-// const forecastButton = document.querySelector('.js-weather-forecast-button');
-// const forecastSection = document.querySelector('.js-weather-forecast');
-// const forecastList = document.querySelector('.js-weather-forecast-list');
-//
-// forecastButton.addEventListener('click', async () => {
-//     const city = inputElement.value.trim();
-//     if (!city) return;
-//
-//     try {
-//         const forecastData = await getWeatherForecastByCity(city);
-//         displayForecast(forecastData);
-//         forecastSection.style.display = 'block';
-//     } catch (error) {
-//         console.error('Error fetching forecast:', error);
-//     }
-// });
+forecastHideButton.addEventListener('click', () => {
+    forecastSection.style.display = 'none';
+    forecastButton.style.display = 'inline-block';
+});
 
 function displayForecast(forecastData) {
     forecastList.innerHTML = '';
