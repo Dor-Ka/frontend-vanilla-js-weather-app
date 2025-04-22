@@ -166,11 +166,14 @@
     display: none;
 }
 
+.error-info {
+    font-size: 1.5em;
+}
+
 .error-icon {
     margin-right: 10px;
     min-width: 100px;
     min-height: 100px;
-    /*font-size: 1.5em;*/
 }
 
 
