@@ -1,4 +1,4 @@
-import { getWeatherByCity, getWeatherForecastByCity } from './api.js';
+import {getWeatherByCity, getWeatherForecastByCity} from './api.js';
 
 const themeToggleButton = document.querySelector('.js-theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
@@ -72,6 +72,7 @@ searchButton.addEventListener('click', async () => {
         descriptionElement.textContent = 'Please try again';
         iconElement.src = '';
         resultSection.classList.add('is-hidden');
+        showErrorUI();
     }
 });
 
@@ -109,10 +110,18 @@ function displayForecast(forecastData) {
     forecastList.innerHTML = '';
 
     const dailyForecast = {};
-    const today = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    const today = new Date().toLocaleDateString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric'
+    });
 
     forecastData.list.forEach(item => {
-        const date = new Date(item.dt * 1000).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        const date = new Date(item.dt * 1000).toLocaleDateString('en-US', {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric'
+        });
 
         if (date === today) return;
 
@@ -159,4 +168,9 @@ function displayForecast(forecastData) {
         forecastItem.appendChild(tempMin);
         forecastList.appendChild(forecastItem);
     }
+}
+
+function showErrorUI() {
+    const errorContainer = document.getElementById('error-container');
+    errorContainer.style.display = 'block';
 }

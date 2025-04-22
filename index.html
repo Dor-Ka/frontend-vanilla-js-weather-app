@@ -57,19 +57,25 @@
         <button class="weather__button js-weather-search-button" type="button">Search</button>
     </section>
 
+    <div id="error-container" class="error" style="display: none;">
+        <img class="error-icon" src="img/error-icon.svg"/>
+        <p> Oops! Could not fetch weather data. Please try again later.</p>
+    </div>
+
     <section class="weather__section js-weather-result is-hidden">
-       <div class="weather__result">
-           <h2 class="weather__section-title js-weather-city-name">City Name</h2>
-           <p class="weather__temperature js-weather-temperature">--°C</p>
-           <img src="" alt="Weather icon" class="weather__icon js-weather-icon"/>
-           <p class="weather__description js-weather-description">Weather description</p>
-       </div>
+        <div class="weather__result">
+            <h2 class="weather__section-title js-weather-city-name">City Name</h2>
+            <p class="weather__temperature js-weather-temperature">--°C</p>
+            <img src="" alt="Weather icon" class="weather__icon js-weather-icon"/>
+            <p class="weather__description js-weather-description">Weather description</p>
+        </div>
         <button class="weather__button js-weather-forecast-button" id="forecast-button">Show 5-Day Forecast</button>
     </section>
 
     <section class="weather__section js-weather-forecast is-hidden" id="weather-forecast">
         <h2 class="weather__section-title">5-Day Forecast</h2>
-        <button class="weather__button js-weather-forecast-button-hide" id="forecast-button-hide">Hide 5-Day Forecast</button>
+        <button class="weather__button js-weather-forecast-button-hide" id="forecast-button-hide">Hide 5-Day Forecast
+        </button>
         <div class="weather__forecast-list js-weather-forecast-list">
         </div>
     </section>
