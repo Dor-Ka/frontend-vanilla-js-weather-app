@@ -44,6 +44,8 @@ searchButton.addEventListener('click', async () => {
 
     if (!city) return;
 
+    hideErrorUI();
+
     try {
         cityNameElement.textContent = 'Loading...';
         temperatureElement.textContent = '--°C';
@@ -75,6 +77,12 @@ searchButton.addEventListener('click', async () => {
         showErrorUI();
     }
 });
+
+function hideErrorUI() {
+    const errorContainer = document.getElementById('error-container');
+    errorContainer.style.display = 'none';
+}
+
 
 inputElement.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
