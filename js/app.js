@@ -2,6 +2,8 @@ import { getWeatherByCity, getWeatherForecastByCity } from './api.js';
 
 const themeToggleButton = document.querySelector('.js-theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
+const resultSection = document.querySelector('.js-weather-result');
+
 
 document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -47,6 +49,7 @@ searchButton.addEventListener('click', async () => {
         temperatureElement.textContent = '--°C';
         descriptionElement.textContent = '-';
         iconElement.src = '';
+        resultSection.style.display = 'none';
 
         const data = await getWeatherByCity(city);
 
@@ -61,11 +64,14 @@ searchButton.addEventListener('click', async () => {
         descriptionElement.textContent = description;
         iconElement.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         iconElement.alt = description;
+
+        resultSection.style.display = 'block';
     } catch (err) {
         cityNameElement.textContent = 'City not found';
         temperatureElement.textContent = '';
         descriptionElement.textContent = 'Please try again';
         iconElement.src = '';
+        resultSection.style.display = 'none';
     }
 });
 
