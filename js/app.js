@@ -49,7 +49,7 @@ searchButton.addEventListener('click', async () => {
         temperatureElement.textContent = '--°C';
         descriptionElement.textContent = '-';
         iconElement.src = '';
-        resultSection.style.display = 'none';
+        resultSection.classList.add('is-hidden');
 
         const data = await getWeatherByCity(city);
 
@@ -65,13 +65,13 @@ searchButton.addEventListener('click', async () => {
         iconElement.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         iconElement.alt = description;
 
-        resultSection.style.display = 'block';
+        resultSection.classList.remove('is-hidden');
     } catch (err) {
         cityNameElement.textContent = 'City not found';
         temperatureElement.textContent = '';
         descriptionElement.textContent = 'Please try again';
         iconElement.src = '';
-        resultSection.style.display = 'none';
+        resultSection.classList.add('is-hidden');
     }
 });
 
@@ -93,16 +93,16 @@ forecastButton.addEventListener('click', async () => {
     try {
         const forecastData = await getWeatherForecastByCity(city);
         displayForecast(forecastData);
-        forecastSection.style.display = 'block';
-        forecastButton.style.display = 'none';
+        forecastSection.classList.remove('is-hidden');
+        forecastButton.classList.add('is-hidden');
     } catch (error) {
         console.error('Error fetching forecast:', error);
     }
 });
 
 forecastHideButton.addEventListener('click', () => {
-    forecastSection.style.display = 'none';
-    forecastButton.style.display = 'inline-block';
+    forecastSection.classList.add('is-hidden');
+    forecastButton.classList.remove('is-hidden');
 });
 
 function displayForecast(forecastData) {
