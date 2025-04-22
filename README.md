@@ -45,9 +45,11 @@ It fetches real-time weather data from a public API, allows users to search for 
 &emsp;├── 📄 api.js   
 ├── 📁 img   
 &emsp;├── favicon-v2.png   
+&emsp;├── error-icon.png   
 &emsp;├── og-img.png    
-&emsp;├── screenshot-light.png    
-&emsp;└── screenshot-dark.png    
+&emsp;├── screenshot_01.png    
+&emsp;├── screenshot_02.png    
+&emsp;├── screenshot_03.png    
 └── 📄 README.md
 
 ## 📈 Versions
