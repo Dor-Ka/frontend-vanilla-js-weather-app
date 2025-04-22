@@ -18,9 +18,5 @@ body {
     align-items: center;
     padding: 2rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
-
     position: relative;
 }
-
-
-

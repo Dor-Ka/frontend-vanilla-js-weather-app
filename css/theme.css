@@ -3,7 +3,11 @@
     --text-color: #122C20;
     --accent-color: #E1A306;
     --accent-hover: #f59e0b;
-    --card-bg: #ffffff;
+    --accent-focus: #FF7300;
+    --card-bg: #96C5B0;
+    --card-text-color: #122C20;
+    --button-text-color: #1e1e1e;
+    --button-hover: #E4AE25;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -11,8 +15,7 @@
     --bg-color: #122C20;
     --text-color: #CEE6DB;
     --accent-color: #f59e0b;
-    --accent-hover: #fbbf24;
-    --card-bg: #2c2c2c;
+    --accent-hover: #E1A306;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -30,9 +33,10 @@
     gap: 0.5rem;
 }
 
-.theme-toggle:hover {
-    background-color: var(--accent-color);
-    color: white;
+.theme-toggle:focus {
+    border-color: var(--accent-focus);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 221, 0, 0.3);
 }
 
 [data-theme="light"] .theme-toggle {
@@ -53,13 +57,4 @@
 [data-theme="dark"] .theme-toggle:hover {
     background-color: var(--text-color);
     color: var(--card-bg);
-}
-
-[data-theme="dark"] .weather__result {
-    background-color: #70A98F;
-    color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
 }
