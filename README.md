@@ -92,12 +92,6 @@ It fetches real-time weather data from a public API, allows users to search for 
 ### v0.7 – Error Handling
 - Improve error UI (not just text)
 
-
-## coming soon:
-
-### UI Polish & Features
-- Add units toggle (°C / °F)
-
 ## Security Notes
 
 This project is a demonstration of programming skills and serves educational purposes.
