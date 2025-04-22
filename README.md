@@ -3,7 +3,6 @@
 A clean and responsive weather application built with HTML, CSS (BEM), and Vanilla JavaScript.  
 It fetches real-time weather data from a public API, allows users to search for cities, and displays current weather conditions along with a short forecast.
 
-🛠 This project is currently under development. Features will be implemented step by step in upcoming versions.
 
 ## 🔗 Live Demo
 
@@ -14,7 +13,7 @@ It fetches real-time weather data from a public API, allows users to search for 
 ![result](./img/screenshot_02.png)
 ![5-Day Forecast](./img/screenshot_03.png)
 
-## 🔮 Planned Features
+## 🔮 Features
 
 - 🌍 Search weather by city name
 - ☀️ Display current temperature, weather description, icon, humidity, and wind speed
@@ -29,7 +28,7 @@ It fetches real-time weather data from a public API, allows users to search for 
 - CSS3 + BEM
 - Vanilla JavaScript (ES6+)
 - Fetch API
-- OpenWeatherMap API (or other public API)
+- OpenWeatherMap API
 - Responsive Design
 
 ## 📌 Project Structure
