@@ -79,6 +79,13 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Improved API structure and data rendering logic
 - Refactored JS-related DOM class names to use js- prefix for better separation of concerns
 
+### v0.5 – Responsiveness
+- Designed fully responsive and works seamlessly across devices with different screen widths:
+  - Below 560px: Layout adjustments for a compact interface.
+  - Below 520px: Weather forecast items wrap and are displayed in a vertical layout. 
+  - Below 400px: More compact adjustments for small screens (e.g., padding, font sizes).
+
+
 ## coming soon:
 
 ### Forecast and Error Handling
