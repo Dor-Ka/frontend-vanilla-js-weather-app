@@ -129,21 +129,21 @@ function displayForecast(forecastData) {
         const dayName = document.createElement('h3');
         dayName.textContent = day;
 
+        const icon = document.createElement('img');
+        icon.src = `https://openweathermap.org/img/wn/${dailyForecast[day].icon}@2x.png`;
+        icon.alt = dailyForecast[day].description;
+        icon.classList.add('weather__forecast-icon');
+
         const tempMax = document.createElement('p');
         tempMax.textContent = `Max: ${(Math.round(dailyForecast[day].temp_max)).toFixed(0)}°C`;
 
         const tempMin = document.createElement('p');
         tempMin.textContent = `Min: ${(Math.round(dailyForecast[day].temp_min)).toFixed(0)}°C`;
 
-        const icon = document.createElement('img');
-        icon.src = `https://openweathermap.org/img/wn/${dailyForecast[day].icon}@2x.png`;
-        icon.alt = dailyForecast[day].description;
-        icon.classList.add('weather__forecast-icon');
-
         forecastItem.appendChild(dayName);
+        forecastItem.appendChild(icon);
         forecastItem.appendChild(tempMax);
         forecastItem.appendChild(tempMin);
-        forecastItem.appendChild(icon);
         forecastList.appendChild(forecastItem);
     }
 }
