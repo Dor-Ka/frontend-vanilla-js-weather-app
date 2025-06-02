@@ -32,24 +32,25 @@ It fetches real-time weather data from a public API, allows users to search for 
 - Responsive Design
 
 ## 📌 Project Structure
-
-📁 frontend-vanilla-js-weather-app    
-├── 📄 index.html    
-├── 📁 css   
-&emsp;├── 📄 style.css   
-&emsp;├── 📄 theme.css   
-&emsp;├── 📄 weather.css   
-├── 📁 js   
-&emsp;├── 📄 app.js    
-&emsp;├── 📄 api.js   
-├── 📁 img   
-&emsp;├── favicon-v2.png   
-&emsp;├── error-icon.png   
-&emsp;├── og-img.png    
-&emsp;├── screenshot_01.png    
-&emsp;├── screenshot_02.png    
-&emsp;├── screenshot_03.png    
+```
+📁 frontend-vanilla-js-weather-app
+├── 📄 index.html
+├── 📁 css
+│   ├── 📄 style.css
+│   ├── 📄 theme.css
+│   └── 📄 weather.css
+├── 📁 js
+│   ├── 📄 app.js
+│   └── 📄 api.js
+├── 📁 img
+│   ├── 📄 favicon-v2.png
+│   ├── 📄 error-icon.png
+│   ├── 📄 og-img.png
+│   ├── 📄 screenshot_01.png
+│   ├── 📄 screenshot_02.png
+│   └── 📄 screenshot_03.png
 └── 📄 README.md
+```
 
 ## 📈 Versions
 
@@ -112,4 +113,6 @@ is placed directly in the code.
 **Dorota Karpinska**  
 GitHub: [@Dor-Ka](https://github.com/Dor-Ka)
 
----
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
